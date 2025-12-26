@@ -89,8 +89,6 @@ Built with Vanilla JavaScript + HTML5 Canvas, no frameworks, no installation req
 
 ## Tech Stack
 
-## Tech Stack
-
 **HTML5**
 - Structure & SEO
 
