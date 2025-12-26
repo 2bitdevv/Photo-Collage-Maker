@@ -155,7 +155,24 @@ function generateCollage() {
     const x = col * cellSize + (col + 1) * spacing;
     const y = row * cellSize + (row + 1) * spacing;
 
-    ctx.drawImage(images[i], x, y, cellSize, cellSize);
+    // object-fit: cover logic
+    const img = images[i];
+    const imgRatio = img.width / img.height;
+    const cellRatio = 1; // cellSize/cellSize
+    let drawWidth = cellSize, drawHeight = cellSize;
+    let sx = 0, sy = 0, sw = img.width, sh = img.height;
+
+    if (imgRatio > cellRatio) {
+      // Image is wider than cell: crop sides
+      sw = img.height * cellRatio;
+      sx = (img.width - sw) / 2;
+    } else {
+      // Image is taller than cell: crop top/bottom
+      sh = img.width / cellRatio;
+      sy = (img.height - sh) / 2;
+    }
+
+    ctx.drawImage(img, sx, sy, sw, sh, x, y, drawWidth, drawHeight);
   }
 
   canvas.scrollIntoView({ behavior: "smooth", block: "center" });
