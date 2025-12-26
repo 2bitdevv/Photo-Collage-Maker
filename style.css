@@ -1,3 +1,23 @@
+/* --- Mobile Color Picker Fix & Dark Mode Button Text --- */
+.color-picker-wrapper {
+  position: relative;
+}
+#bgColor {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+html.dark-mode .btn-primary,
+html.dark-mode .btn-danger {
+  color: #fff !important;
+}
 
   /* Loader from Uiverse.io by andrew-manzyk */
   .loader {
