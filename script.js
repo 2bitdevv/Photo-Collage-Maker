@@ -2,6 +2,23 @@ let images = [];
 let gridCount = 4;
 let gridCols = 2;
 
+// Hamburger Menu Toggle
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+const navMenu = document.getElementById("navMenu");
+
+hamburgerBtn.addEventListener("click", () => {
+  hamburgerBtn.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+
+// Close menu when clicking on a link
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    hamburgerBtn.classList.remove("active");
+    navMenu.classList.remove("active");
+  });
+});
+
 // Color picker display update
 const bgColorInput = document.getElementById("bgColor");
 const colorDisplay = document.getElementById("colorDisplay");
@@ -178,4 +195,10 @@ themeToggle.addEventListener("change", () => {
     html.classList.remove("dark-mode");
     localStorage.setItem("theme", "light");
   }
+});
+
+// Hide loader when page loaded
+window.addEventListener('load', function() {
+  var loader = document.getElementById('pageLoader');
+  if(loader) loader.style.display = 'none';
 });

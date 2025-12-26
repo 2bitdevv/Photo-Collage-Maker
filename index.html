@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo Collage Maker - รวมรูปออนไลน์ ทำรูปตัดแปะฟรี (Free Collage Maker)</title>
-    <meta name="description" content="เว็บรวมรูปออนไลน์ (Collage Maker) ใช้งานฟรี! จัดวางรูปภาพของคุณง่ายๆ มีเลย์เอาต์สวยๆ ให้เลือกเยอะ โหลดไฟล์ภาพชัดระดับ HD ไม่ต้องลงแอป ทำรูปตัดแปะได้ทันที">
-    <meta name="keywords" content="รวมรูป, ตัดแปะรูป, collage maker ออนไลน์, แต่งรูปฟรี, photo grid ไทย, ทำรูป collage, รวมภาพหลายช่อง, เว็บรวมรูป, photo collage, collage maker, online collage, free collage">
+    <meta name="description"
+        content="เว็บรวมรูปออนไลน์ (Collage Maker) ใช้งานฟรี! จัดวางรูปภาพของคุณง่ายๆ มีเลย์เอาต์สวยๆ ให้เลือกเยอะ โหลดไฟล์ภาพชัดระดับ HD ไม่ต้องลงแอป ทำรูปตัดแปะได้ทันที">
+    <meta name="keywords"
+        content="รวมรูป, ตัดแปะรูป, collage maker ออนไลน์, แต่งรูปฟรี, photo grid ไทย, ทำรูป collage, รวมภาพหลายช่อง, เว็บรวมรูป, photo collage, collage maker, online collage, free collage">
     <meta name="author" content="2bitdev">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://photo-collage-maker-tau.vercel.app/">
@@ -13,12 +16,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://photo-collage-maker-tau.vercel.app/">
     <meta property="og:title" content="Photo Collage Maker - รวมรูปออนไลน์ ทำรูปตัดแปะฟรี">
-    <meta property="og:description" content="เว็บรวมรูปออนไลน์ (Collage Maker) ใช้งานฟรี! จัดวางรูปภาพของคุณง่ายๆ มีเลย์เอาต์สวยๆ ให้เลือกเยอะ โหลดไฟล์ภาพชัด">
+    <meta property="og:description"
+        content="เว็บรวมรูปออนไลน์ (Collage Maker) ใช้งานฟรี! จัดวางรูปภาพของคุณง่ายๆ มีเลย์เอาต์สวยๆ ให้เลือกเยอะ โหลดไฟล์ภาพชัด">
     <meta property="og:image" content="https://photo-collage-maker-tau.vercel.app/img/og-image.jpg">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://photo-collage-maker-tau.vercel.app/">
     <meta property="twitter:title" content="Photo Collage Maker - รวมรูปออนไลน์ ทำรูปตัดแปะฟรี">
-    <meta property="twitter:description" content="เว็บรวมรูปออนไลน์ (Collage Maker) ใช้งานฟรี! จัดวางรูปภาพของคุณง่ายๆ มีเลย์เอาต์สวยๆ ให้เลือกเยอะ โหลดไฟล์ภาพชัด">
+    <meta property="twitter:description"
+        content="เว็บรวมรูปออนไลน์ (Collage Maker) ใช้งานฟรี! จัดวางรูปภาพของคุณง่ายๆ มีเลย์เอาต์สวยๆ ให้เลือกเยอะ โหลดไฟล์ภาพชัด">
     <meta property="twitter:image" content="https://photo-collage-maker-tau.vercel.app/img/og-image.jpg">
     <script type="application/ld+json">
     {
@@ -33,12 +38,26 @@
         }
     }
     </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5352019709969521" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5352019709969521"
+        crossorigin="anonymous"></script>
     <meta name="google-site-verification" content="1Lv_Cznvnv8h745-A4Jrirz_uz3Ph42leIF43la5CLY" />
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="./img/logo.png">
 </head>
+
 <body>
+    <div class="loader" id="pageLoader">
+        <div class="text"><span>Loading</span></div>
+        <div class="text"><span>Loading</span></div>
+        <div class="text"><span>Loading</span></div>
+        <div class="text"><span>Loading</span></div>
+        <div class="text"><span>Loading</span></div>
+        <div class="text"><span>Loading</span></div>
+        <div class="text"><span>Loading</span></div>
+        <div class="text"><span>Loading</span></div>
+        <div class="text"><span>Loading</span></div>
+        <div class="line"></div>
+    </div>
     <!-- Header -->
     <header class="header">
         <div class="header-container">
@@ -46,7 +65,12 @@
                 <div class="logo-icon">P</div>
                 <span>Photo Collage Maker</span>
             </div>
-            <nav class="nav">
+            <button class="hamburger-btn" id="hamburgerBtn">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <nav class="nav" id="navMenu">
                 <a href="#" class="nav-link">Home</a>
                 <a href="#template" class="nav-link">Templates</a>
                 <a href="#Customize" class="nav-link">Customize</a>
@@ -68,10 +92,21 @@
                     Donate
                 </a>
                 <label class="switch">
-                  <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="#ffd43b"><circle r="5" cy="12" cx="12"></circle><path d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"></path></g></svg></span>
-                  <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path></svg></span>   
-                  <input type="checkbox" class="input">
-                  <span class="slider"></span>
+                    <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <g fill="#ffd43b">
+                                <circle r="5" cy="12" cx="12"></circle>
+                                <path
+                                    d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z">
+                                </path>
+                            </g>
+                        </svg></span>
+                    <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <path
+                                d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z">
+                            </path>
+                        </svg></span>
+                    <input type="checkbox" class="input">
+                    <span class="slider"></span>
                 </label>
             </nav>
         </div>
@@ -183,16 +218,27 @@
                 <span>Generate Collage</span>
             </button>
             <button class="download-btn" type="button" onclick="downloadCollage()">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24px" width="24px"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"><g id="Interface / Download"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#f1f1f1" d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" id="Vector"></path></g></g></svg>
-              Download
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24px" width="24px">
+                    <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                    <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <g id="Interface / Download">
+                            <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#f1f1f1"
+                                d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" id="Vector"></path>
+                        </g>
+                    </g>
+                </svg>
+                Download
             </button>
             <button class="btn btn-danger" onclick="clearAll()">
-              <span class="delete-icon">
-                <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
-                </svg>
-              </span>
-              <span>Delete</span>
+                <span class="delete-icon">
+                    <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                            stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+                    </svg>
+                </span>
+                <span>Delete</span>
             </button>
         </section>
 
@@ -214,4 +260,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
