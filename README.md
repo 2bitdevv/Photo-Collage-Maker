@@ -1,5 +1,6 @@
 # Photo Collage Maker
 **preview : [photocollagemaker](https://photo-collage-maker-tau.vercel.app/)** 
+---
 A lightweight, browser-based photo collage generator that lets you combine multiple images into a clean, customizable grid layout.
 Built with Vanilla JavaScript + HTML5 Canvas, no frameworks, no installation required.
 
