@@ -699,3 +699,8 @@ input[type="file"] {
 .canvas-section {
   animation: fadeIn 0.5s ease-out;
 }
+
+footer a{
+  color: var(--primary-blue);
+  text-decoration: none;  
+}
