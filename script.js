@@ -140,9 +140,6 @@ function generateCollage() {
   const canvas = document.getElementById("collageCanvas");
   const ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  const canvas = document.getElementById("collageCanvas");
-  const ctx = canvas.getContext("2d");
   const spacing = parseInt(document.getElementById("spacing").value);
   const bgColor = document.getElementById("bgColor").value;
 
@@ -238,7 +235,8 @@ themeToggle.addEventListener("change", () => {
 });
 
 // Hide loader when page loaded
-window.addEventListener('load', function() {
+// Hide loader as soon as DOM is ready (fix preloader stuck)
+document.addEventListener('DOMContentLoaded', function() {
   var loader = document.getElementById('pageLoader');
   if(loader) loader.style.display = 'none';
 });
