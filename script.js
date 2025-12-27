@@ -1,3 +1,7 @@
+// เพิ่ม event listener ให้ spacing
+document.getElementById("spacing").addEventListener("change", () => {
+  generateCollage();
+});
 let images = [];
 let gridCount = 4;
 let gridCols = 2;
@@ -132,6 +136,10 @@ function generateCollage() {
     alert("Please select photos first!");
     return;
   }
+  // clear canvas ก่อนวาดใหม่
+  const canvas = document.getElementById("collageCanvas");
+  const ctx = canvas.getContext("2d");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   const canvas = document.getElementById("collageCanvas");
   const ctx = canvas.getContext("2d");
