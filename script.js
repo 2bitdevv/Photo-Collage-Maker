@@ -178,6 +178,7 @@ function generateCollage() {
   canvas.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
+
 function downloadCollage() {
   const canvas = document.getElementById("collageCanvas");
   if (canvas.width === 0) {
@@ -185,10 +186,24 @@ function downloadCollage() {
     return;
   }
 
-  const link = document.createElement("a");
-  link.download = `collage_${Date.now()}.png`;
-  link.href = canvas.toDataURL();
-  link.click();
+  // ใช้ toBlob เพื่อรองรับมือถือและประหยัดหน่วยความจำ
+  canvas.toBlob(function(blob) {
+    if (!blob) {
+      alert("Download not supported on this browser.");
+      return;
+    }
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.style.display = "none";
+    link.download = `collage_${Date.now()}.png`;
+    link.href = url;
+    document.body.appendChild(link);
+    link.click();
+    setTimeout(function() {
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }, 100);
+  }, "image/png");
 }
 
 updateGrid();
